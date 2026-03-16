@@ -1,7 +1,5 @@
 # Privacy Policy
 
-**Effective Date:** January 1, 2024
-
 ## Introduction
 Beautiful Clock ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how our Chrome extension collects, uses, and safeguards your information.
 
@@ -21,10 +19,12 @@ The extension requests the following permissions for specific functionalities:
 - **`unlimitedStorage`**: To allow you to add multiple high-resolution local background images without hitting Chrome's standard storage quotas.
 
 ## Third-Party Services
-The extension loads default background images from a third-party service ([Unsplash](https://unsplash.com/)). When your browser fetches these images, the image hosting provider may log your IP address according to their own privacy policies. We are not responsible for the privacy practices of third-party image providers.
+The extension loads default background images from a third-party service ([Picsum Photos](https://picsum.photos/)). When your browser fetches these images, the image hosting provider may log your IP address according to their own privacy policies. We are not responsible for the privacy practices of third-party image providers.
 
 ## Changes to This Policy
-We may update our Privacy Policy from time to time. We will notify you of any changes by updating the Effective Date at the top of this policy and publishing the new policy.
+We may update our Privacy Policy from time to time. By continuously using the extension, you agree to the latest published version of this policy.
 
 ## Contact Us
-If you have any questions or concerns about this Privacy Policy, please contact us through the support tab on the Chrome Web Store.
+If you have any questions or concerns about this Privacy Policy, or want to learn more about my work, you can reach out via:
+- **Email:** [me@fahimzada.com](mailto:me@fahimzada.com)
+- **Website & Socials:** [fahimzada.com](https://fahimzada.com)

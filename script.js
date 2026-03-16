@@ -1,14 +1,14 @@
 const defaultBackgrounds = [
-    'https://picsum.photos/id/1015/1920/1080',
-    'https://picsum.photos/id/1018/1920/1080',
-    'https://picsum.photos/id/1019/1920/1080',
-    'https://picsum.photos/id/1035/1920/1080',
-    'https://picsum.photos/id/1036/1920/1080',
-    'https://picsum.photos/id/1037/1920/1080',
-    'https://picsum.photos/id/1038/1920/1080',
-    'https://picsum.photos/id/1039/1920/1080',
-    'https://picsum.photos/id/1043/1920/1080',
-    'https://picsum.photos/id/1044/1920/1080'
+    'https://picsum.photos/id/1015/3840/2160.webp',
+    'https://picsum.photos/id/1018/3840/2160.webp',
+    'https://picsum.photos/id/1019/3840/2160.webp',
+    'https://picsum.photos/id/1035/3840/2160.webp',
+    'https://picsum.photos/id/1036/3840/2160.webp',
+    'https://picsum.photos/id/1037/3840/2160.webp',
+    'https://picsum.photos/id/1038/3840/2160.webp',
+    'https://picsum.photos/id/1039/3840/2160.webp',
+    'https://picsum.photos/id/1043/3840/2160.webp',
+    'https://picsum.photos/id/1044/3840/2160.webp'
 ];
 
 let backgrounds = [...defaultBackgrounds];

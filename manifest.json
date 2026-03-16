@@ -3,6 +3,8 @@
     "name": "Beautiful Clock & Backgrounds",
     "version": "1.0.0",
     "description": "A beautiful clock with rotating backgrounds for your new tab. Customize your view with high-quality images and a sleek digital clock.",
+    "author": "Fahim Zada <me@fahimzada.com>",
+    "homepage_url": "https://fahimzada.com",
     "chrome_url_overrides": {
         "newtab": "newtab.html"
     },
