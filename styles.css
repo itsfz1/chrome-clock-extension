@@ -1,0 +1,404 @@
+:root {
+    --clock-font: 'Orbitron', monospace;
+    --date-font: 'Rajdhani', sans-serif;
+    --clock-color: #ffffff;
+    --date-color: #f0f0f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 1s ease-in-out;
+    z-index: -1;
+}
+
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.7) 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.clock-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    z-index: 10;
+    transition: justify-content 0.3s ease;
+}
+
+.pos-top {
+    justify-content: flex-start;
+    padding-top: 50px;
+}
+
+.pos-center {
+    justify-content: center;
+}
+
+.pos-bottom {
+    justify-content: flex-end;
+    padding-bottom: 50px;
+}
+
+.time-display {
+    text-align: center;
+    padding: 50px 80px 20px 80px;
+    animation: fadeIn 1s ease-in;
+    position: relative;
+}
+
+.custom-texts-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+    position: relative;
+    z-index: 1;
+    animation: fadeIn 1s ease-in;
+}
+
+.custom-text-item-display {
+    font-size: 20px;
+    font-weight: 600;
+    text-shadow: 1px 2px 8px rgba(0, 0, 0, 0.9),
+                 0 5px 15px rgba(0, 0, 0, 0.5);
+    background: transparent;
+    padding: 8px 24px;
+    max-width: 80vw;
+    text-align: center;
+    word-wrap: break-word;
+    transition: transform 0.3s ease;
+}
+
+.custom-text-item-display:hover {
+    transform: scale(1.02);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.time {
+    font-family: var(--clock-font);
+    font-size: 96px;
+    font-weight: 900;
+    color: var(--clock-color);
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.3),
+                 2px 4px 12px rgba(0, 0, 0, 0.8),
+                 0 10px 30px rgba(0, 0, 0, 0.6);
+    letter-spacing: 8px;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.date {
+    font-family: var(--date-font);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--date-color);
+    text-shadow: 1px 2px 8px rgba(0, 0, 0, 0.9),
+                 0 5px 15px rgba(0, 0, 0, 0.5);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+}
+
+.settings {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.settings-btn {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.settings-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg);
+}
+
+.settings-panel {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    min-width: 320px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    max-height: 85vh;
+}
+
+.settings-scroll-area {
+    overflow-y: auto;
+    padding-right: 5px;
+    margin-bottom: 10px;
+}
+
+.settings-scroll-area::-webkit-scrollbar {
+    width: 6px;
+}
+.settings-scroll-area::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+}
+
+.settings-section {
+    margin-bottom: 20px;
+}
+
+.settings-section h4 {
+    color: #fff;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.color-pickers {
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.color-pickers label {
+    flex: 1;
+}
+
+.color-pickers input[type="color"] {
+    width: 100%;
+    height: 35px;
+    padding: 0;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    background: transparent;
+    margin-top: 5px;
+}
+
+.settings-panel select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: #2a2a2a;
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.settings-panel select:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.settings-panel.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+}
+
+.settings-panel h3 {
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.settings-panel label {
+    display: block;
+    color: #e0e0e0;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.settings-panel input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.settings-panel input:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.settings-panel button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.settings-panel button:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.checkbox-label {
+    display: flex !important;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: auto !important;
+    cursor: pointer;
+}
+
+.checkbox-label span {
+    font-weight: 600;
+}
+
+.local-bg-section {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.local-bg-section.hidden {
+    display: none;
+}
+
+.file-input-label {
+    position: relative;
+    cursor: pointer;
+}
+
+.file-input-label input[type="file"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.file-btn {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    background: rgba(100, 150, 255, 0.3);
+    border: 1px solid rgba(100, 150, 255, 0.5);
+    border-radius: 5px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.file-btn:hover {
+    background: rgba(100, 150, 255, 0.5);
+    border-color: rgba(100, 150, 255, 0.7);
+}
+
+.local-bg-list {
+    max-height: 200px;
+    overflow-y: auto;
+    margin-top: 10px;
+}
+
+.bg-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    margin-bottom: 5px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.bg-item button {
+    padding: 4px 8px !important;
+    margin: 0 !important;
+    width: auto !important;
+    background: rgba(255, 0, 0, 0.3);
+}
+
+.bg-item button:hover {
+    background: rgba(255, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+    .time {
+        font-size: 56px;
+        letter-spacing: 4px;
+    }
+
+    .date {
+        font-size: 18px;
+        letter-spacing: 2px;
+    }
+
+    .time-display {
+        padding: 30px 40px;
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "Beautiful Clock & Backgrounds",
+    "version": "1.0.0",
+    "description": "A beautiful clock with rotating backgrounds for your new tab. Customize your view with high-quality images and a sleek digital clock.",
+    "chrome_url_overrides": {
+        "newtab": "newtab.html"
+    },
+    "permissions": [
+        "storage",
+        "unlimitedStorage"
+    ],
+    "host_permissions": [
+        "https://picsum.photos/*",
+        "https://fastly.picsum.photos/*"
+    ],
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'; img-src 'self' data: https:;"
+    },
+    "icons": {
+        "16": "assets/icon16.png",
+        "48": "assets/icon48.png",
+        "128": "assets/icon128.png"
+    },
+    "offline_enabled": true
+}
